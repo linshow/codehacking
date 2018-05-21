@@ -7,7 +7,7 @@
     <h1>create</h1>
 
 <div class="row">
-    {!! Form::open(['method'=>'POST','action'=>'AdminPostsController@store'])!!}
+    {!! Form::open(['method'=>'POST','action'=>'AdminPostsController@store','files'=>true])!!}
         <div class="form-group">
             {!! Form::label('title',"Title")!!}
             {!! Form::text('title',null,['class'=>'form-control'])!!}
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('category_id',"Category")!!}
-            {!! Form::select('category_id',array('1'=>'php',0=>'Javascript'),null,['class'=>'form-control'])!!}
+            {!! Form::select('category_id',[''=>'Choose Categories']+ $categories ,null,['class'=>'form-control'])!!}
         
         </div>
 
